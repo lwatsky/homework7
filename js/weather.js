@@ -2,7 +2,7 @@ function gettingJSON(){
     //Display the forecast
     // Your code here.
     document.getElementById('forecast').style.display = 'block';
-    var key = 'dce32e5989b082ae7a2940255fa6b018';
+    let APIID = 'dce32e5989b082ae7a2940255fa6b018';
 
     //Set default location if one isn't provided
     
@@ -34,10 +34,10 @@ function gettingJSON(){
     let query;
     // Your code here. 
     if (Number.isInteger(location)) {
-        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + location  + "&appid=" + key + "&units=" + format;
+        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + location  + "&appid=" + APIID + "&units=" + format;
     }
     else {
-        query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + key + "&units=" + format;
+        query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + APIID + "&units=" + format;
     } 
     console.log("Query is :" + query);
 
@@ -59,17 +59,15 @@ function gettingJSON(){
         console.log(JSON.stringify(json));
         loc = json['name'];
         document.querySelector("#loc").innerHTML = loc;
-
         temp = json['main']['temp']; 
         document.querySelector("#temp").innerHTML = temp + " with " + json['weather'][0]['description'];
 
         let imageLink = "http://openweathermap.org/img/wn/" + json['weather'][0]['icon'] + '.png'; 
         let altText = json['weather'][0]['description']; 
         let imageTitle = "Weather"; 
-
         document.getElementById("tempImg").setAttribute("alt", altText); 
         document.getElementById("tempImg").setAttribute("src", imageLink); 
-        document.getElementById("tempImg").setAttribute("title", imageTitle);
+        document.getElementById("tempImg").setAttribute("title", imageTitle); 
 
     });
 }
