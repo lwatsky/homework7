@@ -2,7 +2,7 @@ function gettingJSON(){
     //Display the forecast
     // Your code here.
     document.getElementById('forecast').style.display = 'block';
-    var key = 'dce32e5989b082ae7a2940255fa6b018';
+    var key = 'dc1976717b533eebcfc5671763a8bbbb';
 
     //Set default location if one isn't provided
     
