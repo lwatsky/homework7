@@ -2,7 +2,7 @@ function gettingJSON(){
     //Display the forecast
     // Your code here.
     document.getElementById('forecast').style.display = 'block';
-    let APIID = 'dc1976717b533eebcfc5671763a8bbbb';
+    var key = 'dc1976717b533eebcfc5671763a8bbbb';
 
     //Set default location if one isn't provided
     
@@ -34,10 +34,10 @@ function gettingJSON(){
     let query;
     // Your code here. 
     if (Number.isInteger(location)) {
-        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + location  + "&appid=" + APIID + "&units=" + format;
+        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + location  + "&appid=" + key + "&units=" + format;
     }
     else {
-        query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + APIID + "&units=" + format;
+        query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + key + "&units=" + format;
     } 
     console.log("Query is :" + query);
 
