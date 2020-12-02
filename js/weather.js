@@ -2,7 +2,7 @@ function gettingJSON(){
     //Display the forecast
     // Your code here.
     document.getElementById('forecast').style.display = 'block';
-    let APIID = 'dce32e5989b082ae7a2940255fa6b018';
+    var key = 'dce32e5989b082ae7a2940255fa6b018';
 
     //Set default location if one isn't provided
     
@@ -34,11 +34,11 @@ function gettingJSON(){
     let query;
     // Your code here. 
     if (Number.isInteger(location)) {
-        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + location  + "&appid=" + APIID + "&units=" + format;
+        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + location  + "&appid=" + key + "&units=" + format;
     }
     else {
-        query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + APIID + "&units=" + format;
-    } 
+        query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + key + "&units=" + format;
+    }
     console.log("Query is :" + query);
 
     //Create and set variables for each of the elements you
@@ -55,7 +55,7 @@ function gettingJSON(){
         //elements in HTML.  
         //I would print the JSON to the console
         // Your code here.
-    
+
         console.log(JSON.stringify(json));
         loc = json['name'];
         document.querySelector("#loc").innerHTML = loc;
@@ -67,7 +67,7 @@ function gettingJSON(){
         let imageTitle = "Weather"; 
         document.getElementById("tempImg").setAttribute("alt", altText); 
         document.getElementById("tempImg").setAttribute("src", imageLink); 
-        document.getElementById("tempImg").setAttribute("title", imageTitle); 
+        document.getElementById("tempImg").setAttribute("title", imageTitle);
 
     });
 }
