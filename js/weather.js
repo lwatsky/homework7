@@ -58,14 +58,15 @@ function gettingJSON(){
     
         console.log(JSON.stringify(json));
         loc = json['name'];
-        document.getElementById("loc").innerHTML = loc;
-        
+        document.querySelector("#loc").innerHTML = loc;
+
         temp = json['main']['temp']; 
         document.querySelector("#temp").innerHTML = temp + " with " + json['weather'][0]['description'];
 
         let imageLink = "http://openweathermap.org/img/wn/" + json['weather'][0]['icon'] + '.png'; 
         let altText = json['weather'][0]['description']; 
         let imageTitle = "Weather"; 
+
         document.getElementById("tempImg").setAttribute("alt", altText); 
         document.getElementById("tempImg").setAttribute("src", imageLink); 
         document.getElementById("tempImg").setAttribute("title", imageTitle);
