@@ -2,16 +2,16 @@ function gettingJSON(){
     //Display the forecast
     // Your code here.
     document.getElementById('forecast').style.display = 'block';
-    var key = 'dc1976717b533eebcfc5671763a8bbbb';
+    let apiId = 'dc1976717b533eebcfc5671763a8bbbb';
 
     //Set default location if one isn't provided
     
     let location;
-    if (document.querySelector('#location').value == '') {
+    if (document.getElementById('location').value == '') {
         location = 'Ann Arbor';
     }
     else {
-        location = document.querySelector('#location').value;
+        location = document.getElementById('location').value;
     }
 
     // Your code here.
@@ -19,7 +19,7 @@ function gettingJSON(){
 
     //set default temperature format if one isn't provided
     let format;
-    if (document.querySelector("#celcius").checked == true) {
+    if (document.getElementById("celcius").checked == true) {
         format = 'metric'; 
     }
     else {
@@ -34,10 +34,10 @@ function gettingJSON(){
     let query;
     // Your code here. 
     if (Number.isInteger(location)) {
-        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + location  + "&appid=" + key + "&units=" + format;
+        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + location  + "&appid=" + apiId + "&units=" + format;
     }
     else {
-        query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + key + "&units=" + format;
+        query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiId + "&units=" + format;
     }
     console.log("Query is :" + query);
 
